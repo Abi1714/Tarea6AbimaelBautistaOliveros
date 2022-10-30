@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Cuestionario</title>
+    
+
+    <style>
+        .contenedor {
+			text-align: center;
+			display: inline-block;
+			margin: 30px;
+            width: 100%;
+            background-color: rgb(145, 56, 72);
+		}
+        .text{
+            margin: 10px;
+			font-family: "Lobster", cursive;
+			text-shadow: 1px 0 #232931;
+			font-size: 1.2rem;
+        }
+    </style>
+
+</head>
+<body class="contenedor">
+    <p class="text">Ingrese un nombre: </p>
+    <input id="nom" required>
+    <p id="valida_nom"></p>
+
+    <p class="text">Ingrese un número de control: </p>
+    <input id="numero" required>
+    <p id="valida_numero"></p>
+
+    <p class="text">Ingrese RFC: </p>
+    <input id="rfc" required>
+    <p id="valida_rfc"></p>
+
+    <p class="text">Ingrese telefono de Morelia: </p>
+    <input id="tel" required>
+    <p id="valida_tel"></p>
+
+    <p class="text">Ingrese correo institucional de Morelia: </p>
+    <input id="correo" required>
+    <p id="valida_correo"></p>
+
+    <button type="button" onclick="myFunction()">Submit</button>
+
+    <script>
+    function myFunction(){
+        let x1 = document.getElementById("numero").value;
+        const regex1 = /^[0-9]{2}[0-2]{3}[0-9]{3}$/;
+
+         if (regex1.test(x1)) {
+            text="Numero valido";
+        }
+        else {
+            text="Numero no valido";
+        }
+        document.getElementById("valida_numero").innerHTML = text;
+        
+        let x2= document.getElementById("rfc").value;
+        const regex2 = /^[A-Z]{4}[0-9]{6}[1-9]{1}[A-Z]{1}[0-9]{1}$/;
+        if (regex2.test(x2)) {
+            text="Numero valido";
+        }
+        else {
+            text="Numero no valido";
+        }
+        document.getElementById("valida_rfc").innerHTML = text;
+        
+
+        let x3 = document.getElementById("tel").value;
+        const regex3 = /^443[0-9]{7}$/;
+        if(regex3.test(x3)) {
+            text="Numero valido";
+        }
+        else{
+            text="Numero no valido";
+        }
+        document.getElementById("valida_tel").innerHTML = text;
+
+        let x4 = document.getElementById("correo").value;
+        const regex4 = /^l[0-9]{8}@morelia.tecnm.mx$/;
+        if(regex4.test(x4)){
+            text="Numero valido";
+        }
+        else{
+            text="Numero no valido";
+        }
+        document.getElementById("valida_correo").innerHTML = text;
+    }
+    </script>
+
+
+
+
+</body>
+</html>
